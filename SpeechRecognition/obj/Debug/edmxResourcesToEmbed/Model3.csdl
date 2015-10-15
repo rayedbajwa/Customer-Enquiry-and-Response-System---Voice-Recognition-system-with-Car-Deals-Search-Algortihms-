@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="icersModel1" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="icersEntities3" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="enquiries" EntityType="icersModel1.enquiry" />
+    <EntitySet Name="matches" EntityType="icersModel1.match" />
+    <EntitySet Name="sellers" EntityType="icersModel1.seller" />
+    <EntitySet Name="weights" EntityType="icersModel1.weight" />
+    <AssociationSet Name="match_enq" Association="icersModel1.match_enq">
+      <End Role="enquiry" EntitySet="enquiries" />
+      <End Role="matches" EntitySet="matches" />
+    </AssociationSet>
+    <AssociationSet Name="match_sel" Association="icersModel1.match_sel">
+      <End Role="sellers" EntitySet="sellers" />
+      <End Role="matches" EntitySet="matches" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="enquiry">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="engine" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="trans" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="budget" Type="Int32" />
+    <Property Name="reg_city" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="process" Type="Boolean" />
+    <Property Name="title" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="colour" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="year" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="matches" Relationship="icersModel1.match_enq" FromRole="enquiry" ToRole="matches" />
+  </EntityType>
+  <EntityType Name="match">
+    <Key>
+      <PropertyRef Name="match_id" />
+    </Key>
+    <Property Name="priority" Type="Int16" />
+    <Property Name="enq_id" Type="Int32" />
+    <Property Name="sel_id" Type="Int32" />
+    <Property Name="match_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="enquiry" Relationship="icersModel1.match_enq" FromRole="matches" ToRole="enquiry" />
+    <NavigationProperty Name="seller" Relationship="icersModel1.match_sel" FromRole="matches" ToRole="sellers" />
+  </EntityType>
+  <EntityType Name="seller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="engine" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="trans" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="milage" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="contact" Type="String" MaxLength="11" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="year" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="dealer_name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="colour" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="budget" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="reg_city" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="matches" Relationship="icersModel1.match_sel" FromRole="sellers" ToRole="matches" />
+  </EntityType>
+  <EntityType Name="weight">
+    <Key>
+      <PropertyRef Name="weight_id" />
+    </Key>
+    <Property Name="weight_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="colour" Type="Int32" />
+    <Property Name="enq_id" Type="Int32" />
+    <Property Name="reg_city" Type="Int32" />
+    <Property Name="engine" Type="Int32" />
+    <Property Name="budget" Type="Int32" />
+    <Property Name="trans" Type="Int32" />
+  </EntityType>
+  <Association Name="match_enq">
+    <End Role="enquiry" Type="icersModel1.enquiry" Multiplicity="0..1" />
+    <End Role="matches" Type="icersModel1.match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="enquiry">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="matches">
+        <PropertyRef Name="enq_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="match_sel">
+    <End Role="sellers" Type="icersModel1.seller" Multiplicity="0..1" />
+    <End Role="matches" Type="icersModel1.match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sellers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="matches">
+        <PropertyRef Name="sel_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

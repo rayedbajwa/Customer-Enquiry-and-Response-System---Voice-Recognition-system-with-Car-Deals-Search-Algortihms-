@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="icersModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="icersModelStoreContainer">
+          <EntitySet Name="cars" EntityType="icersModel.Store.cars" store:Type="Tables" />
+          <EntitySet Name="customers" EntityType="icersModel.Store.customers" store:Type="Tables" />
+          <EntitySet Name="details" EntityType="icersModel.Store.details" store:Type="Tables" />
+          <EntitySet Name="matches" EntityType="icersModel.Store.matches" store:Type="Tables" />
+          <EntitySet Name="weights" EntityType="icersModel.Store.weights" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="cars">
+          <Key>
+            <PropertyRef Name="car_id" />
+          </Key>
+          <Property Name="car_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="brand_id" Type="int" />
+          <Property Name="colour" Type="nvarchar" MaxLength="15" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="condition" Type="smallint" />
+          <Property Name="description" Type="nvarchar" MaxLength="100" />
+          <Property Name="model" Type="int" />
+        </EntityType>
+        <EntityType Name="customers">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="contact" Type="bigint" />
+          <Property Name="details_id" Type="int" />
+        </EntityType>
+        <EntityType Name="details">
+          <Key>
+            <PropertyRef Name="details_id" />
+          </Key>
+          <Property Name="details_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customer_id" Type="int" />
+          <Property Name="car_model" Type="nvarchar" MaxLength="50" />
+          <Property Name="car_colour" Type="nvarchar" MaxLength="15" />
+          <Property Name="car_year" Type="int" />
+          <Property Name="budget" Type="money" />
+          <Property Name="car_condition" Type="bit" />
+        </EntityType>
+        <EntityType Name="matches">
+          <Key>
+            <PropertyRef Name="match_id" />
+          </Key>
+          <Property Name="match_id" Type="int" Nullable="false" />
+          <Property Name="customer_id" Type="int" />
+          <Property Name="car_id" Type="int" />
+          <Property Name="priority" Type="smallint" />
+        </EntityType>
+        <EntityType Name="weights">
+          <Key>
+            <PropertyRef Name="weight_id" />
+          </Key>
+          <Property Name="weight_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customer_id" Type="int" />
+          <Property Name="car_id" Type="int" />
+          <Property Name="made" Type="numeric" Precision="3" />
+          <Property Name="company" Type="numeric" Precision="3" />
+          <Property Name="colour" Type="numeric" Precision="3" />
+          <Property Name="price" Type="numeric" Precision="3" />
+          <Property Name="condition" Type="numeric" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="icersModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="icersEntities1" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="cars" EntityType="icersModel.car" />
+          <EntitySet Name="customers" EntityType="icersModel.customer" />
+          <EntitySet Name="details" EntityType="icersModel.detail" />
+          <EntitySet Name="matches" EntityType="icersModel.match" />
+          <EntitySet Name="weights" EntityType="icersModel.weight" />
+        </EntityContainer>
+        <EntityType Name="car">
+          <Key>
+            <PropertyRef Name="car_id" />
+          </Key>
+          <Property Name="car_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="brand_id" Type="Int32" />
+          <Property Name="colour" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="condition" Type="Int16" />
+          <Property Name="description" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="model" Type="Int32" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="contact" Type="Int64" />
+          <Property Name="details_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="detail">
+          <Key>
+            <PropertyRef Name="details_id" />
+          </Key>
+          <Property Name="details_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_id" Type="Int32" />
+          <Property Name="car_model" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="car_colour" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="car_year" Type="Int32" />
+          <Property Name="budget" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="car_condition" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="match">
+          <Key>
+            <PropertyRef Name="match_id" />
+          </Key>
+          <Property Name="match_id" Type="Int32" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" />
+          <Property Name="car_id" Type="Int32" />
+          <Property Name="priority" Type="Int16" />
+        </EntityType>
+        <EntityType Name="weight">
+          <Key>
+            <PropertyRef Name="weight_id" />
+          </Key>
+          <Property Name="weight_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_id" Type="Int32" />
+          <Property Name="car_id" Type="Int32" />
+          <Property Name="made" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="company" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="colour" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="price" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="condition" Type="Decimal" Precision="3" Scale="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="icersModelStoreContainer" CdmEntityContainer="icersEntities1">
+          <EntitySetMapping Name="cars">
+            <EntityTypeMapping TypeName="icersModel.car">
+              <MappingFragment StoreEntitySet="cars">
+                <ScalarProperty Name="car_id" ColumnName="car_id" />
+                <ScalarProperty Name="brand_id" ColumnName="brand_id" />
+                <ScalarProperty Name="colour" ColumnName="colour" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="condition" ColumnName="condition" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="model" ColumnName="model" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="icersModel.customer">
+              <MappingFragment StoreEntitySet="customers">
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="contact" ColumnName="contact" />
+                <ScalarProperty Name="details_id" ColumnName="details_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="details">
+            <EntityTypeMapping TypeName="icersModel.detail">
+              <MappingFragment StoreEntitySet="details">
+                <ScalarProperty Name="details_id" ColumnName="details_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="car_model" ColumnName="car_model" />
+                <ScalarProperty Name="car_colour" ColumnName="car_colour" />
+                <ScalarProperty Name="car_year" ColumnName="car_year" />
+                <ScalarProperty Name="budget" ColumnName="budget" />
+                <ScalarProperty Name="car_condition" ColumnName="car_condition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="matches">
+            <EntityTypeMapping TypeName="icersModel.match">
+              <MappingFragment StoreEntitySet="matches">
+                <ScalarProperty Name="match_id" ColumnName="match_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="car_id" ColumnName="car_id" />
+                <ScalarProperty Name="priority" ColumnName="priority" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="weights">
+            <EntityTypeMapping TypeName="icersModel.weight">
+              <MappingFragment StoreEntitySet="weights">
+                <ScalarProperty Name="weight_id" ColumnName="weight_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="car_id" ColumnName="car_id" />
+                <ScalarProperty Name="made" ColumnName="made" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="colour" ColumnName="colour" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="condition" ColumnName="condition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

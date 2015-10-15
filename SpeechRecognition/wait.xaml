@@ -1,0 +1,12 @@
+﻿<Window x:Class="SpeechRecognition.wait"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="wait" Height="152" Width="404" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid IsEnabled="False" Opacity="0.2">
+        <Label Content="Please Wait... Data is Being Loaded" HorizontalAlignment="Left" Margin="110,85,0,0" VerticalAlignment="Top"/>
+        <MediaElement x:Name="mp" HorizontalAlignment="Left" Height="70" Margin="165,10,0,0" VerticalAlignment="Top" Width="75" Source="file:\\C:\Users\RnBz\documents\visual studio 2012\Projects\Speech Recognition2\SpeechRecognition\loading.gif" LoadedBehavior="Manual"  />
+        <Label x:Name="title" Content="" HorizontalAlignment="Left" Margin="172,113,0,0" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Window>

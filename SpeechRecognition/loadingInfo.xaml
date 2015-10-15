@@ -1,0 +1,10 @@
+﻿<Window x:Class="SpeechRecognition.loadingInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="loadingInfo" Height="30" Width="425" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="Manual" Left="430" Top="430">
+    <Grid>
+        
+        <Label Name="data" Content="Loading data" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Top"  Width="365" />
+
+    </Grid>
+</Window>

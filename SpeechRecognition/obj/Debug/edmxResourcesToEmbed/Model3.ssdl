@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="icersModel1.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="icersModel1StoreContainer">
+    <EntitySet Name="enquiry" EntityType="icersModel1.Store.enquiry" store:Type="Tables" />
+    <EntitySet Name="matches" EntityType="icersModel1.Store.matches" store:Type="Tables" />
+    <EntitySet Name="sellers" EntityType="icersModel1.Store.sellers" store:Type="Tables" />
+    <EntitySet Name="weights" EntityType="icersModel1.Store.weights" store:Type="Tables" />
+    <AssociationSet Name="match_enq" Association="icersModel1.Store.match_enq">
+      <End Role="enquiry" EntitySet="enquiry" />
+      <End Role="matches" EntitySet="matches" />
+    </AssociationSet>
+    <AssociationSet Name="match_sel" Association="icersModel1.Store.match_sel">
+      <End Role="sellers" EntitySet="sellers" />
+      <End Role="matches" EntitySet="matches" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="enquiry">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="engine" Type="nvarchar" MaxLength="10" />
+    <Property Name="trans" Type="nvarchar" MaxLength="10" />
+    <Property Name="budget" Type="int" />
+    <Property Name="reg_city" Type="nvarchar" MaxLength="20" />
+    <Property Name="process" Type="bit" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="colour" Type="nvarchar" MaxLength="15" />
+    <Property Name="year" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="matches">
+    <Key>
+      <PropertyRef Name="match_id" />
+    </Key>
+    <Property Name="priority" Type="smallint" />
+    <Property Name="enq_id" Type="int" />
+    <Property Name="sel_id" Type="int" />
+    <Property Name="match_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="sellers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="engine" Type="nvarchar" MaxLength="15" />
+    <Property Name="trans" Type="nvarchar" MaxLength="15" />
+    <Property Name="milage" Type="nvarchar" MaxLength="15" />
+    <Property Name="contact" Type="nvarchar" MaxLength="11" />
+    <Property Name="description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="year" Type="nvarchar" MaxLength="15" />
+    <Property Name="dealer_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="colour" Type="nvarchar" MaxLength="100" />
+    <Property Name="budget" Type="nvarchar" MaxLength="20" />
+    <Property Name="reg_city" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="weights">
+    <Key>
+      <PropertyRef Name="weight_id" />
+    </Key>
+    <Property Name="weight_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="colour" Type="int" />
+    <Property Name="enq_id" Type="int" />
+    <Property Name="reg_city" Type="int" />
+    <Property Name="engine" Type="int" />
+    <Property Name="budget" Type="int" />
+    <Property Name="trans" Type="int" />
+  </EntityType>
+  <Association Name="match_enq">
+    <End Role="enquiry" Type="icersModel1.Store.enquiry" Multiplicity="0..1" />
+    <End Role="matches" Type="icersModel1.Store.matches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="enquiry">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="matches">
+        <PropertyRef Name="enq_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="match_sel">
+    <End Role="sellers" Type="icersModel1.Store.sellers" Multiplicity="0..1" />
+    <End Role="matches" Type="icersModel1.Store.matches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sellers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="matches">
+        <PropertyRef Name="sel_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

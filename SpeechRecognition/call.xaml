@@ -1,0 +1,93 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="SpeechRecognition.call"
+        Title="call" Height="325" Width="555" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid x:Name="rwp">
+        <Grid x:Name="brand" Margin="0,0,440,175" Visibility="Hidden">
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="150" Stroke="Black" VerticalAlignment="Top" Width="115"/>
+
+            <Label Content="Brand" HorizontalAlignment="Left" Margin="33,0,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="toyo_rb" Content="Toyota" HorizontalAlignment="Left" Margin="17,41,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="brand"/>
+            <RadioButton x:Name="suzu_rb" Content="Suzuki" HorizontalAlignment="Left" Margin="17,61,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="brand"/>
+            <RadioButton x:Name="hon_rb" Content="Honda" HorizontalAlignment="Left" Margin="17,81,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="brand"/>
+            <RadioButton x:Name="kia_rb" Content="Kia" HorizontalAlignment="Left" Margin="17,101,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="brand"/>
+            <RadioButton x:Name="bmw_rb" Content="BMW" HorizontalAlignment="Left" Margin="17,121,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="brand"/>
+        </Grid>
+        <Grid x:Name="model" Margin="200,-1,240,175" Visibility="Hidden">
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="150" Stroke="Black" VerticalAlignment="Top" Width="115" Margin="0,1,0,0"/>
+            <Label x:Name="mod" Content="Model" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="model1" Content="Toyota" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" IsEnabled="False" Visibility="Hidden" GroupName="model"/>
+            <RadioButton x:Name="model2" Content="Suzuki" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" IsEnabled="False" Visibility="Hidden" GroupName="model"/>
+            <RadioButton x:Name="model3" Content="Honda" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" IsEnabled="False" Visibility="Hidden" GroupName="model"/>
+            <RadioButton x:Name="model5" Content="BMW" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" IsEnabled="False" Visibility="Hidden" GroupName="model"/>
+            <RadioButton x:Name="model4" Content="Honda" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top" IsEnabled="False" Visibility="Hidden" GroupName="model"/>
+        </Grid>
+        <Grid x:Name="colour" Margin="405,0,35,175" Visibility="Hidden">
+            <Rectangle x:Name="colorRect" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="150" Stroke="Black" VerticalAlignment="Top" Width="115"/>
+            <Label x:Name="Colour" Content="Colour" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Top"/>
+
+        </Grid>
+        <Grid x:Name="engGrid" Margin="15,170,370,5" Visibility="Hidden">
+            <Image x:Name="engine_pic" Margin="0,35,120,70" Source="arrow-right.jpg" Stretch="Fill"/>
+            <Rectangle x:Name="engine_rec" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="150" Stroke="Black" VerticalAlignment="Top" Width="115" Margin="55,0,0,0"/>
+            <Label Content="Engine Type" HorizontalAlignment="Left" Margin="75,4,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="cng_rb" Content="CNG" HorizontalAlignment="Left" Margin="80,35,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="engine"/>
+            <RadioButton x:Name="petrol_rb" Content="Petrol" HorizontalAlignment="Left" Margin="80,60,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="engine" RenderTransformOrigin="0.545,2.333"/>
+            <RadioButton x:Name="diesel_rb" Content="Diesel" HorizontalAlignment="Left" Margin="80,85,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="engine"/>
+        </Grid>
+        <Grid x:Name="transGrid" Margin="190,170,195,5" Visibility="Hidden">
+            <Image x:Name="trans_pic" Margin="0,40,120,65" Source="arrow-right.jpg" Stretch="Fill"/>
+            <Rectangle x:Name="engine_rec_Copy" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="150" Stroke="Black" VerticalAlignment="Top" Width="115" Margin="55,0,0,0"/>
+            <Label Content="Transmission" HorizontalAlignment="Left" Margin="75,4,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="auto_rb" Content="Automatic" HorizontalAlignment="Left" Margin="81,45,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="trans"/>
+            <RadioButton x:Name="manual_rb" Content="Manual" HorizontalAlignment="Left" Margin="82,70,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="trans"/>
+        </Grid>
+        <Grid x:Name="budGrid" Margin="360,170,26,5" Visibility="Hidden">
+            <Image x:Name="bud_pic" Margin="0,40,119,65" Source="arrow-right.jpg" Stretch="Fill"/>
+            <Rectangle x:Name="engine_rec_Copy1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="150" Stroke="Black" VerticalAlignment="Top" Width="115" Margin="54,0,0,0"/>
+            <RadioButton x:Name="bud1" Content="500000" HorizontalAlignment="Left" Margin="75,35,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="budget"/>
+            <Label Content="Budget" HorizontalAlignment="Left" Margin="92,5,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="bud2" Content="1000000" HorizontalAlignment="Left" Margin="75,55,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="budget"/>
+            <RadioButton x:Name="bud3" Content="1500000" HorizontalAlignment="Left" Margin="75,75,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="budget"/>
+            <RadioButton x:Name="bud4" Content="2000000" HorizontalAlignment="Left" Margin="75,95,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="budget"/>
+            <RadioButton x:Name="bud5" Content="2500000" HorizontalAlignment="Left" Margin="75,115,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="budget"/>
+            <Label Content="and Above" HorizontalAlignment="Left" Margin="88,124,0,0" VerticalAlignment="Top"/>
+
+        </Grid>
+        <Grid x:Name="reg" Margin="50,115,21,120" Visibility="Hidden">
+            <Label Content="Choose Registration City" HorizontalAlignment="Left" Margin="140,0,0,0" VerticalAlignment="Top" Width="145"/>
+            <RadioButton x:Name="c1" Content="Lahore" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="reg"/>
+            <RadioButton x:Name="c2" Content="Karachi" HorizontalAlignment="Left" Margin="95,75,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="reg"/>
+            <RadioButton x:Name="c3" Content="Islamabad" HorizontalAlignment="Left" Margin="195,75,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="reg"/>
+            <RadioButton x:Name="c4" Content="Rawalpindi" HorizontalAlignment="Left" Margin="295,75,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="reg"/>
+            <RadioButton x:Name="c5" Content="Peshawar" HorizontalAlignment="Left" Margin="410,75,0,0" VerticalAlignment="Top" IsEnabled="False" GroupName="reg"/>
+
+        </Grid>
+        <Image x:Name="modelPic" Margin="135,45,370,235" Source="arrow-right.jpg" Stretch="Fill" Visibility="Hidden"/>
+        <Image x:Name="colourPic" Margin="335,50,170,230" Source="arrow-right.jpg" Stretch="Fill" Visibility="Hidden"/>
+        <Grid x:Name="yearGrid" Margin="97,65,84,69" Visibility="Hidden">
+            <Label Content="Year" HorizontalAlignment="Left" Margin="145,0,0,0" VerticalAlignment="Top"/>
+            <Label Content="2006" HorizontalAlignment="Left" Margin="0,104,0,0" VerticalAlignment="Top"/>
+            <Label Content="2007" HorizontalAlignment="Left" Margin="68,105,0,0" VerticalAlignment="Top"/>
+            <Label Content="2008" HorizontalAlignment="Left" Margin="135,105,0,0" VerticalAlignment="Top"/>
+            <Label Content="2009" HorizontalAlignment="Left" Margin="198,105,0,0" VerticalAlignment="Top"/>
+            <Label Content="2010" HorizontalAlignment="Left" Margin="275,105,0,0" VerticalAlignment="Top"/>
+            <Label Content="2011" HorizontalAlignment="Left" Margin="338,105,0,0" VerticalAlignment="Top"/>
+            <Label Content="2012" HorizontalAlignment="Left" Margin="100,164,0,0" VerticalAlignment="Top"/>
+            <Label Content="2013" HorizontalAlignment="Left" Margin="165,165,0,0" VerticalAlignment="Top"/>
+            <Label Content="2014" HorizontalAlignment="Left" Margin="238,165,0,0" VerticalAlignment="Top"/>
+
+        </Grid>
+        <Grid x:Name="main" Margin="35,74,65,95">
+            <Label Content="Main Menu" HorizontalAlignment="Left" Margin="130,41,0,0" VerticalAlignment="Top" FontSize="36"/>
+            <Label Content="Intelligent Customers Enquiry and Response System" HorizontalAlignment="Left" Margin="76,0,0,0" VerticalAlignment="Top"/>
+            <Label Content="1. Check Enquiry" HorizontalAlignment="Left" Margin="0,126,0,0" VerticalAlignment="Top"/>
+            <Label Content="2. Enter New Enquiry" HorizontalAlignment="Left" Margin="170,126,0,0" VerticalAlignment="Top"/>
+            <Label Content="3. Car Analytics" HorizontalAlignment="Left" Margin="365,130,0,0" VerticalAlignment="Top"/>
+
+        </Grid>
+        <Button Content="X" BorderThickness="0" Click="Button_Click_1" Margin="510,10,28,295"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SpeechRecognition.analys" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>9wIgATWAACBAINCCBxCQAQICAAEIAIAAAFCDAQBEAAA=</HashCode>
+      <FileName>analys.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.App" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.call" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gjCWAGQhWABkMABAACAUiSACgSEJjkCgAADAAEQAA0M=</HashCode>
+      <FileName>call.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.car_data" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAyAIEAgCAABAMAIACkMQRSIAggAAAAAAQAAAABAAA=</HashCode>
+      <FileName>car_data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.carmod" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAABIAAAAAAQgIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>carmod.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.MainWindow" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgBAAAAAAAABAAAAEAAAAAQAABIAEAAAAA=</HashCode>
+      <FileName>color.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.icersDataSet" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAQAwAAggJABAEAUAAAAAgCQBgAAAQAABEgBBg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.loadingInfo" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>loadingInfo.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.mainmenu" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICACAAAAAhABIAAAAAAAAEAAACAAACACAACAAQABA=</HashCode>
+      <FileName>mainmenu.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.match" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgACAAAAAAIAAAAAAAAQAAAAACAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>match.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.sellers" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAwAIEAgCAAJAMAIACEMQASAAgAAAAAAAQAAAABAAA=</HashCode>
+      <FileName>sellers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.wait" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>wait.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.web_parse" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAFACAAAAAAAAAAAAAIAQAAAAAAAABAQAAAAAAAAAA=</HashCode>
+      <FileName>web_parse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.icersDataSetTableAdapters.enquiryTableAdapter" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.icersDataSetTableAdapters.matchesTableAdapter" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.icersDataSetTableAdapters.sellersTableAdapter" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.icersDataSetTableAdapters.weightsTableAdapter" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.icersDataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQIAACAAAABABAkBAgAAMQAgAAACgEAAAAQAAAAQBAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.Properties.Resources" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeechRecognition.Properties.Settings" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAEAAAAIAAAAAABAAAAAAAAAAAACAE=</HashCode>
+      <FileName>Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

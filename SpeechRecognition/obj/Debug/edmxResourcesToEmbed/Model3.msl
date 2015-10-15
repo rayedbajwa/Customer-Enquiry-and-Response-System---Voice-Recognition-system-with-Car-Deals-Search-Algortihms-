@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="icersModel1StoreContainer" CdmEntityContainer="icersEntities3">
+    <EntitySetMapping Name="enquiries">
+      <EntityTypeMapping TypeName="icersModel1.enquiry">
+        <MappingFragment StoreEntitySet="enquiry">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="engine" ColumnName="engine" />
+          <ScalarProperty Name="trans" ColumnName="trans" />
+          <ScalarProperty Name="budget" ColumnName="budget" />
+          <ScalarProperty Name="reg_city" ColumnName="reg_city" />
+          <ScalarProperty Name="process" ColumnName="process" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="colour" ColumnName="colour" />
+          <ScalarProperty Name="year" ColumnName="year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="matches">
+      <EntityTypeMapping TypeName="icersModel1.match">
+        <MappingFragment StoreEntitySet="matches">
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="enq_id" ColumnName="enq_id" />
+          <ScalarProperty Name="sel_id" ColumnName="sel_id" />
+          <ScalarProperty Name="match_id" ColumnName="match_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sellers">
+      <EntityTypeMapping TypeName="icersModel1.seller">
+        <MappingFragment StoreEntitySet="sellers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="engine" ColumnName="engine" />
+          <ScalarProperty Name="trans" ColumnName="trans" />
+          <ScalarProperty Name="milage" ColumnName="milage" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="dealer_name" ColumnName="dealer_name" />
+          <ScalarProperty Name="colour" ColumnName="colour" />
+          <ScalarProperty Name="budget" ColumnName="budget" />
+          <ScalarProperty Name="reg_city" ColumnName="reg_city" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="weights">
+      <EntityTypeMapping TypeName="icersModel1.weight">
+        <MappingFragment StoreEntitySet="weights">
+          <ScalarProperty Name="weight_id" ColumnName="weight_id" />
+          <ScalarProperty Name="colour" ColumnName="colour" />
+          <ScalarProperty Name="enq_id" ColumnName="enq_id" />
+          <ScalarProperty Name="reg_city" ColumnName="reg_city" />
+          <ScalarProperty Name="engine" ColumnName="engine" />
+          <ScalarProperty Name="budget" ColumnName="budget" />
+          <ScalarProperty Name="trans" ColumnName="trans" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

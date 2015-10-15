@@ -1,0 +1,35 @@
+﻿<Window x:Class="SpeechRecognition.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Colour:" Height="350" Width="525" WindowStyle="None">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#FFF4F4F5"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+      
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox x:Name="ColorslistBox" Background="LightGray"/>
+            <Border Grid.Column="1" Margin="5,0,5,0" BorderThickness="2" BorderBrush="White" CornerRadius="3">
+                <Canvas x:Name="ColorCanvas" />
+            </Border>
+        </Grid>
+        <Label Content="Choose your desired Colour:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top"/>
+        <Button Content="X" HorizontalAlignment="Left" Margin="480,8,0,0" VerticalAlignment="Top" Width="27" Click="Button_Click_1" Height="21" BorderThickness="0" RenderTransformOrigin="3,0"/>
+
+    </Grid>
+</Window>
